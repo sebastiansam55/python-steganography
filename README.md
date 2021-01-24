@@ -1,7 +1,13 @@
 # python-steganography
 Basic Steganography Tool
 
-## Requirements
+## Installation & Requirements
+Have `python3` and `pip` installed:
+`pip install -r requirements.txt`
+
+Requires `PIL` and `numpy` python packages. 
+
+`sig` script uses `identify` from imagemagick (probably have to modify the path for use on Windows)
 
 
 ## Usage
@@ -44,9 +50,6 @@ It does this by getting the locations the same way the encoding portion of the p
 
 If the password is different the output of the command will be all "n"s unless it is able to find the changes or the noise by random chance. The reason for this is clear if you look at the `char_map` which has `(0, 0, 0)` mapped to `n`. Meaning if the program tries to compare a point that has been unchanged the result will be `(0, 0, 0)`.
 
-## `sig` script
-Small script from another project that I also found useful here. Takes a file extension as the only option at gets the image signature (using imagemagcik's `identify`) and prints them out.
-
 ### Improvements
 Obviously expanding the number of characters available. I kept away from changing transparency as I think that a lot of sites probably totally strip that out when uploading. Probably colud get away with changing the colors by more than one per channel.
 
@@ -54,6 +57,8 @@ I initially started the program looking for the most common colors and altering 
 
 I know that there is a whole field of study about this kind of thing but I didn't know what it was called and wanted to see what my solution/implementation would look like before consulting reference materials.
 
+### `sig` script
+Small script from another project that I also found useful here. Takes a file extension as the only option at gets the image signature (using imagemagcik's `identify`) and prints them out.
 
 # Bonus points
 Bonus points if any one is able to find what message I hid in the `pfpout.png`.
